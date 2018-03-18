@@ -13,50 +13,92 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <div class="col-2 offset-1">Logo</div>
-                <div class="col-2 offset-6 d-flex justify-content-end">Cart</div>
+                <div class="col-2 offset-1" style="padding-left: 0px">
+                    <img class="logo-classic" src="resources/img/logo_classic.png" />
+                </div>
+                <div class="col-2 offset-6 d-flex justify-content-end" style="padding-right: 3px;">
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="cart-wrapper">
+                           <img src="resources/img/ico_cart.png" class="logo-cart">
+                           <span class="text-cart">2</span>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button">Action</button>
+                        <button class="dropdown-item" type="button">Another action</button>
+                        <button class="dropdown-item" type="button">Something else here</button>
+                    </div>
+                </div>
                 <div class="col-1"></div>
             </div>
         </nav>
     </header>
 
     <section>
-        <div class="container-fluid">
-            <div class="row" style="margin-top: 40px;">
-                <div class="col-10 offset-1">GAME OF THE WEEK</div>
+<!--        <div class="container-fluid gradient"></div>-->
+        <div class="container-fluid gradient">
+            <div class="row" style="margin-top: 0px; padding-top: 40px;">
+                <div class="col-10 offset-1"><p class="main-text">GAME OF THE WEEK</p></div>
             </div>
             <div class="row">
                 <div class="col-10 offset-1">
-                    <img id="mainImage" src="resources/img/img_main.png" alt="">
-                    <button class="secretButton center">A secret button that you should totally implement</button>
+                    <div class="big-spots">
+                        <img src="resources/img/img_main.png" />
+                        <button class="secretButton center">A secret button that you should totally implement</button>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-2 offset-1">
-                    <div class="wrapper">
-                        
+                    <div class="small-spots">
+                        <img src="resources/img/img_small_1.png" />
+                        <p class="text-spots">oddworld: stranger’s
+wrath</p>
+                        <div class="price-tags d-flex justify-content-end">
+                            <span class="badge badge-success">-50%</span>
+                            <button class="btn">$9.99</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-2">
-                    <div class="wrapper">
-                        
+                    <div class="small-spots">
+                        <img src="resources/img/img_small_2.png" />
+                        <p class="text-spots">chaos on deponia</p>
+                        <div class="price-tags d-flex justify-content-end">
+                            <button class="btn" disabled>OWNED</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-2">
-                    <div class="wrapper">
-                        
+                    <div class="small-spots">
+                        <img src="resources/img/img_small_3.png" />
+                        <p class="text-spots">The settlers 2: gold
+edition</p>
+                        <div class="price-tags d-flex justify-content-end">
+                            <button class="btn">IN CART</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-2">
-                    <div class="wrapper">
-                        
+                    <div class="small-spots">
+                        <img src="resources/img/img_small_4.png" />
+                        <p class="text-spots">neverwinter nights</p>
+                        <div class="price-tags d-flex justify-content-end">
+                            <span class="badge badge-success">-50%</span>
+                            <button class="btn">$4.99</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-2">
-                    <div class="wrapper">
-                        
+                    <div class="small-spots">
+                        <img src="resources/img/img_small_5.png" />
+                        <p class="text-spots">assassin’s creed:
+director’s cut</p>
+                        <div class="price-tags d-flex justify-content-end">
+                            <button class="btn">IN CART</button>
+                        </div>
                     </div>
                 </div>
             </div>
