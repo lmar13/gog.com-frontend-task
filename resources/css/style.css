@@ -142,6 +142,50 @@ height: 40px;
 .dropdown-menu .cart-item img {
     width: 100px;
     height: 60px;
+    display: inline-block;
+}
+
+.dropdown-menu .cart-item-title {
+    font-family: 'Source Sans Pro';
+    color:  #212121;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 17px;
+    text-align: left;
+    width: 182px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.dropdown-menu .cart-item-title div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.dropdown-menu .cart-item-remove {
+    font-family: 'Source Sans Pro';
+    color: #212121;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 13px;
+    text-decoration: underline;
+    text-align: left;
+}
+
+.dropdown-menu .cart-item-remove a {
+    color: #212121;
+}
+
+.dropdown-menu .cart-item-price {
+    display: inline-block;
+    font-family: 'Source Sans Pro';
+    color: rgba(64, 64, 64, 0.75);
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
+    margin-left: 20px;
 }
 
 .main-text {
