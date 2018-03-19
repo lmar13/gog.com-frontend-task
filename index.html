@@ -8,7 +8,7 @@
     <!--    Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
@@ -16,12 +16,13 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <div class="col-2 offset-1" style="padding-left: 0px">
-                    <img class="logo-classic" src="resources/img/logo_classic.png" />
+                    <img class="logo-classic" src="static/img/logo_classic.png" />
                 </div>
                 <div class="col-2 offset-6 d-flex justify-content-end" style="padding-right: 3px;">
-                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<!--                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                    <a href="#" class="open-cart" aria-haspopup="true" aria-expanded="false">
                         <div class="cart-wrapper">
-                           <img src="resources/img/ico_cart.png" class="logo-cart">
+                           <img src="static/img/ico_cart.png" class="logo-cart">
                            <span class="text-cart">2</span>
                         </div>
                     </a>
@@ -29,32 +30,47 @@
                         <div class="cart-summary">
                             <span class="cart-item-all">2 items in cart</span>
                             <span class="cart-price-all">$15.97</span>
-                            <button class="btn">CLEAR CART</button>
+                            <button class="btn" id="clearCart">CLEAR CART</button>
                         </div>
-                        <div class="dropdown-divider"></div>
-                        <div class="cart-item">
-                            <img src="resources/img/img_small_5.png" alt="">
-                            <div class="cart-item-title align-middle">
-                               <div>assassin’s creed: director’s cut</div>
-                               <small class="form-text text-muted cart-item-remove">
-                                   <a href="#">Remove</a>
-                               </small>
+                        <div class="cart-items">
+                            <div class="dropdown-divider"></div>
+                            <div class="cart-item">
+                                <img src="static/img/img_small_5.png" alt="">
+                                <div class="cart-item-title align-middle">
+                                   <div>assassin’s creed: director’s cut</div>
+                                   <small class="form-text text-muted cart-item-remove">
+                                       <a href="#">Remove</a>
+                                   </small>
+                                </div>
+                                <div class="cart-item-price">
+                                    $9.99
+                                </div>
                             </div>
-                            <div class="cart-item-price">
-                                $9.99
+                            <div class="dropdown-divider"></div>
+                            <div class="cart-item">
+                                <img src="static/img/img_small_3.png" alt="">
+                                <div class="cart-item-title align-middle">
+                                    <div>The settlers 2: gold edition</div>
+                                    <small class="form-text text-muted cart-item-remove">
+                                        <a href="#">Remove</a>
+                                    </small>
+                                </div>
+                                <div class="cart-item-price">
+                                    $5.99
+                                </div>
                             </div>
-                        </div>
-                        <div class="dropdown-divider"></div>
-                        <div class="cart-item">
-                            <img src="resources/img/img_small_3.png" alt="">
-                            <div class="cart-item-title align-middle">
-                                <div>The settlers 2: gold edition</div>
-                                <small class="form-text text-muted cart-item-remove">
-                                    <a href="#">Remove</a>
-                                </small>
-                            </div>
-                            <div class="cart-item-price">
-                                $5.99
+                            <div class="dropdown-divider"></div>
+                            <div class="cart-item">
+                                <img src="static/img/img_small_3.png" alt="">
+                                <div class="cart-item-title align-middle">
+                                    <div>The settlers 2: gold edition</div>
+                                    <small class="form-text text-muted cart-item-remove">
+                                        <a href="#">Remove</a>
+                                    </small>
+                                </div>
+                                <div class="cart-item-price">
+                                    $5.99
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -73,7 +89,7 @@
             <div class="row">
                 <div class="col-10 offset-1">
                     <div class="big-spots">
-                        <img src="resources/img/img_main.png" />
+                        <img src="static/img/img_main.png" />
                         <button class="secretButton center">A secret button that you should totally implement</button>
                     </div>
                 </div>
@@ -81,7 +97,7 @@
             <div class="row">
                 <div class="col-2 offset-1">
                     <div class="small-spots">
-                        <img src="resources/img/img_small_1.png" />
+                        <img src="static/img/img_small_1.png" />
                         <p class="text-spots">oddworld: stranger’s
 wrath</p>
                         <div class="price-tags d-flex justify-content-end">
@@ -92,7 +108,7 @@ wrath</p>
                 </div>
                 <div class="col-2">
                     <div class="small-spots">
-                        <img src="resources/img/img_small_2.png" />
+                        <img src="static/img/img_small_2.png" />
                         <p class="text-spots">chaos on deponia</p>
                         <div class="price-tags d-flex justify-content-end">
                             <button class="btn" disabled>OWNED</button>
@@ -101,17 +117,17 @@ wrath</p>
                 </div>
                 <div class="col-2">
                     <div class="small-spots">
-                        <img src="resources/img/img_small_3.png" />
+                        <img src="static/img/img_small_3.png" />
                         <p class="text-spots">The settlers 2: gold
 edition</p>
                         <div class="price-tags d-flex justify-content-end">
-                            <button class="btn">IN CART ($5.99)</button>
+                            <button class="btn">IN CART</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="small-spots">
-                        <img src="resources/img/img_small_4.png" />
+                        <img src="static/img/img_small_4.png" />
                         <p class="text-spots">neverwinter nights</p>
                         <div class="price-tags d-flex justify-content-end">
                             <span class="badge badge-success">-50%</span>
@@ -121,11 +137,11 @@ edition</p>
                 </div>
                 <div class="col-2">
                     <div class="small-spots">
-                        <img src="resources/img/img_small_5.png" />
+                        <img src="static/img/img_small_5.png" />
                         <p class="text-spots">assassin’s creed:
 director’s cut</p>
                         <div class="price-tags d-flex justify-content-end">
-                            <button class="btn">IN CART ($9.99)</button>
+                            <button class="btn">IN CART</button>
                         </div>
                     </div>
                 </div>
@@ -139,6 +155,6 @@ director’s cut</p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="resources/js/script.js"></script>
+    <script src="static/js/script.js"></script>
 </body>
 </html>
