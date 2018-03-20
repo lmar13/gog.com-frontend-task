@@ -124,6 +124,7 @@ height: 40px;
     font-size: 15px;
     font-weight: 700;
     text-align: left;
+    display: inline-block;
 }
 
 .dropdown-menu .cart-price-all {
@@ -132,6 +133,8 @@ height: 40px;
     font-size: 15px;
     font-weight: 700;
     text-align: right;
+    width: 45px;
+    display: inline-block;
 }
 
 .dropdown-menu .cart-item {
