@@ -21,28 +21,48 @@ app.get('/',function(req,res){
 });
 
 // get all data from json file
-app.get('/getAllData', function(req, res){  
+app.get('/getAllFromData', function(req, res) {  
     res.setHeader('Content-Type', 'application/json');
     res.send(rawdata);
 });
 
-app.post('/addItemToCart', function(req, res){
+app.get('/getOneFromData', function(req, res) {
     var id = req.body.itemId;
-    var itemData = jsonObj[id-1];
-    itemData = JSON.stringify(itemData, null, 2); 
-    fs.appendFile(path.join(__dirname+'/resources/json/cart.json'), itemData + ',');
+    var itemData.push(jsonObj[id-1]);
+    //itemData = JSON.stringify(itemData, null, 2);
     res.setHeader('Content-Type', 'application/json');
     res.send(itemData);
 });
 
-app.post('/clearCart', function(req, res){
-    fs.writeFile(path.join(__dirname+'/resources/json/cart.json'), '');
+app.get('/getAllFromCart', function(req, res) {
+    var rawDataCart = fs.readFileSync(path.join(__dirname+'/resources/json/cart.json'));
+    res.setHeader('Content-Type', 'application/json');
+    res.send(rawDataCart);
 });
 
-app.get('/getCartItems', function(req, res) {
-    let rawdataCart = fs.readFileSync(path.join(__dirname+'/resources/json/cart.json'));
-    res.setHeader('Content-Type', 'application/json');
-    res.send(rawdataCart);
+app.post('/addItemToCart', function(req, res) {
+    var id = req.body.itemId;
+    var itemData = jsonObj[id-1];
+    var rawDataCart = fs.readFileSync(path.join(__dirname+'/resources/json/cart.json'));
+    var jsonObjCart = JSON.parse(rawDataCart);
+    jsonObjCart.push(itemData);
+    //itemData = JSON.stringify(itemData, null, 2);
+    fs.appendFile(path.join(__dirname+'/resources/json/cart.json'), rawDataCart);
+    //res.setHeader('Content-Type', 'application/json');
+    //res.send(itemData);
+});
+
+app.post('/deleteAllFromCart', function(req, res){
+    fs.writeFile(path.join(__dirname+'/resources/json/cart.json'), '[]');
+});
+
+app.post('/deleteOneFromCart', function(req, res) {
+    var id = req.body.itemId;
+    let rawDataCart = fs.readFileSync(path.join(__dirname+'/resources/json/cart.json'));
+    var jsonObjCart = JSON.parse(rawDataCart);
+    jsonObjCart.splice(id-1,1);
+    //res.setHeader('Content-Type', 'application/json');
+    //res.send(rawdataCart);
 });
 
 // start server
