@@ -3,15 +3,28 @@ $(document).ready(function() {
 //    Initialize spots
     createSpots();
     
+//    Initialize cart
+    createCart();
     
-//    Cart item on hover show remove link
-    $('.cart-item').hover(
-      function() {
-        $(this).find('small').css('visibility', 'visible');
-      }, function() {
-        $(this).find('small').css('visibility', 'hidden');
-      }
-    );
+//    Count items and pirces and update required fileds
+    countItems();
+    countPrice();
+    
+//    Add event listener to each element in cart to show remove btn
+    $('.cart-items').on({
+        mouseenter: function () {
+            //stuff to do on mouse enter
+            $(this).find('small').css('visibility', 'visible');
+        },
+        mouseleave: function () {
+            //stuff to do on mouse leave
+            $(this).find('small').css('visibility', 'hidden');
+        }
+    }, ".cart-item");
+    
+    $('.logo-classic').click(function() {
+        $('.secretButton').toggleClass('moveForward');
+      });
     
 //    Open dropdown menu - cart menu
     $('a.open-cart').on('click', function (event) {
@@ -23,22 +36,30 @@ $(document).ready(function() {
         if (!$('a.open-cart').is(e.target) 
             && $('a.open-cart').has(e.target).length === 0 
             && $('.show').has(e.target).length === 0
+            && !$('#spotsContainer button.btn').is(e.target)
         ) {
             $('div.dropdown-menu.dropdown-menu-right').removeClass('show');
         }
     });
     
-//    Count items and pirces and update required fileds
-    countItems();
-    countPrice();
-    
 //    Clear cart when button clicked
     $('#btn-clear').on('click', function(){
         $('.cart-items').empty();
-        $.post('/clearCart');
+        $.post('/deleteAllFromCart');
         createSpots();
 //        TODO when invoke functions to calculate priceses and number of items
     });
+    
+    $('.cart-items').on('click', '.cart-item-remove a', function(){
+        var elemId = $(this).attr('id');
+        elemId = elemId.substring(4);
+        $.post('/deleteOneFromCart', {"itemId": elemId}, function(data){
+            $.post('/getOneFromData', {"itemId": elemId}, function(datafromserver){
+                $('#btn-' + elemId).html('$' + datafromserver.priceBtn);
+                createCart();
+            });
+        }); 
+    })
     
     $('#spotsContainer').on('click','button', function() {
         let btnText = $(this).html();
@@ -48,32 +69,36 @@ $(document).ready(function() {
             return false;
         }
         else {
-            $(this).html('IN CART');
+            //$(this).html('IN CART');
             
             $.post('/addItemToCart', {"itemId": id}, function(data){
-                let newElem = '';
-                const mouseOver = "$(this).find('small').css('visibility', 'visible');";
-                const mouseLeave = "$(this).find('small').css('visibility', 'hidden');";
-                newElem += `<div class="dropdown-divider"></div>
-                            <div class="cart-item" onmouseover="${mouseOver}" onmouseleave="${mouseLeave}">
-                            <img src="${data.image}" alt="">
-                            <div class="cart-item-title align-middle">
-                            <div>${data.title}</div>
-                            <small class="form-text text-muted cart-item-remove">
-                            <a href="#">Remove</a>
-                            </small></div>
-                            <div class="cart-item-price">$${data.priceBtn}</div></div>`;
-    
-                $('.cart-items').append(newElem);
+                console.log(data);
+            }).done(function() {
+                
+//                createCart();
             });
             
-            
+//            alert('test');
+            setTimeout(function(){ createCart(); }, 500);
+//            createCart();
         }
     });
     
     $('.cart-items').bind("DOMSubtreeModified",function(){
         countPrice();
         countItems();
+    });
+    
+    $('#addBtn').on('click', function(){
+        $.post('/addToData', function(){
+            createSpots();
+        });
+    });
+    
+    $('#delBtn').on('click', function(){
+        $.post('/deleteFromData', function(){
+            createSpots();
+        }); 
     });
     
 });
@@ -94,12 +119,12 @@ function countItems(){
 }
 
 function createSpots() {
-    $.get('/getAllData', function(data){
+    $.get('/getAllFromData', function(data){
         let newElem = '';
         
         $.each(data, (key, val) => {
             
-            if(key === 0) newElem += `<div class="col-2 offset-1">`;
+            if(key % 5 === 0) newElem += `<div class="col-2 offset-1">`;
             else newElem += `<div class="col-2">`;
             
             newElem += `<div class="small-spots" id="spot-${val.id}">
@@ -118,5 +143,31 @@ function createSpots() {
         
         $("#spotsContainer").html(newElem);
         
+    });
+}
+
+function createCart(){
+    $.get('/getAllFromCart', function(data){
+        if($.isEmptyObject(data[0]) === false){
+            let newElem = '';
+        
+            $.each(data, (key, val) => {
+                newElem += `<div class="dropdown-divider"></div>
+                            <div class="cart-item" id="cart-${val.id}">
+                            <img src="${val.image}" alt="">
+                            <div class="cart-item-title align-middle">
+                            <div>${val.title}</div>
+                            <small class="form-text text-muted cart-item-remove">
+                            <a href="#" id="del-${val.id}">Remove</a>
+                            </small></div>
+                            <div class="cart-item-price">$${val.priceBtn}</div></div>`;
+                $('#btn-' + val.id).html('IN CART');
+            });
+
+            $('.cart-items').html(newElem);
+        }
+        else {
+               $('.cart-items').html(''); 
+        }
     });
 }

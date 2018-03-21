@@ -32,49 +32,7 @@
                             <div class="cart-price-all">$15.97</div>
                             <button class="btn" id="btn-clear">CLEAR CART</button>
                         </div>
-                        <div class="cart-items">
-<!--
-                            <div class="dropdown-divider"></div>
-                            <div class="cart-item">
-                                <img src="static/img/img_small_5.png" alt="">
-                                <div class="cart-item-title align-middle">
-                                   <div>assassin’s creed: director’s cut</div>
-                                   <small class="form-text text-muted cart-item-remove">
-                                       <a href="#">Remove</a>
-                                   </small>
-                                </div>
-                                <div class="cart-item-price">
-                                    $9.99
-                                </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="cart-item">
-                                <img src="static/img/img_small_3.png" alt="">
-                                <div class="cart-item-title align-middle">
-                                    <div>The settlers 2: gold edition</div>
-                                    <small class="form-text text-muted cart-item-remove">
-                                        <a href="#">Remove</a>
-                                    </small>
-                                </div>
-                                <div class="cart-item-price">
-                                    $5.99
-                                </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="cart-item">
-                                <img src="static/img/img_small_3.png" alt="">
-                                <div class="cart-item-title align-middle">
-                                    <div>The settlers 2: gold edition</div>
-                                    <small class="form-text text-muted cart-item-remove">
-                                        <a href="#">Remove</a>
-                                    </small>
-                                </div>
-                                <div class="cart-item-price">
-                                    $5.99
-                                </div>
-                            </div>
--->
-                        </div>
+                        <div class="cart-items"></div>
                     </div>
                 </div>
                 <div class="col-1"></div>
@@ -92,68 +50,38 @@
                 <div class="col-10 offset-1">
                     <div class="big-spots">
                         <img src="static/img/img_main.png" />
-                        <button class="secretButton center">A secret button that you should totally implement</button>
+                        <button type="button" class="secretButton center" data-toggle="modal" data-target="#secretModal">A secret button that you should totally implement</button>
                     </div>
                 </div>
             </div>
-            <div class="row" id="spotsContainer">
-<!--
-                <div class="col-2 offset-1">
-                    <div class="small-spots">
-                        <img src="static/img/img_small_1.png" />
-                        <p class="text-spots">oddworld: stranger’s
-wrath</p>
-                        <div class="price-tags d-flex justify-content-end">
-                            <span class="badge badge-success">-50%</span>
-                            <button class="btn">$9.99</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="small-spots">
-                        <img src="static/img/img_small_2.png" />
-                        <p class="text-spots">chaos on deponia</p>
-                        <div class="price-tags d-flex justify-content-end">
-                            <button class="btn" disabled>OWNED</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="small-spots">
-                        <img src="static/img/img_small_3.png" />
-                        <p class="text-spots">The settlers 2: gold
-edition</p>
-                        <div class="price-tags d-flex justify-content-end">
-                            <button class="btn">IN CART</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="small-spots">
-                        <img src="static/img/img_small_4.png" />
-                        <p class="text-spots">neverwinter nights</p>
-                        <div class="price-tags d-flex justify-content-end">
-                            <span class="badge badge-success">-50%</span>
-                            <button class="btn">$4.99</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="small-spots">
-                        <img src="static/img/img_small_5.png" />
-                        <p class="text-spots">assassin’s creed:
-director’s cut</p>
-                        <div class="price-tags d-flex justify-content-end">
-                            <button class="btn">IN CART</button>
-                        </div>
-                    </div>
-                </div>
--->
-            </div>
+            <div class="row" id="spotsContainer"></div>
         </div>
     </section>
 
-
+    <!-- Modal -->
+    <div class="modal fade" id="secretModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Even more secret modal</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <p>You can add new element or delete last one.</p> 
+              <small>! Note that there can't be less then 5 elements</small>
+            
+          </div>
+          <div class="modal-footer">
+            <button id="addBtn" class="btn btn-success">Add</button>
+            <button id="delBtn" class="btn btn-danger">Delete</button>
+<!--            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--            <button type="button" class="btn btn-primary">Save changes</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--    JavaScript files on the end of files to load page quicker -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
