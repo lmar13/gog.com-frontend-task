@@ -90,16 +90,29 @@ $(document).ready(function() {
     });
     
     $('#addBtn').on('click', function(){
-        $.post('/addToData', function(){
-            createSpots();
-        });
+      $("#serverMessage").html('');  
+      $.post('/addToData', function(data){
+          $("#serverMessage").html(data);
+      });
     });
     
     $('#delBtn').on('click', function(){
-        $.post('/deleteFromData', function(){
-            createSpots();
-        }); 
+      $("#serverMessage").html('');
+      $.post('/deleteFromData', function(data){
+          $("#serverMessage").html(data);
+      }); 
     });
+  
+  $("#secretModal .close").on('click', function(){
+    createSpots();
+  });
+  
+  
+  $("#secretModal").modal({
+    keyboard: false,
+    backdrop: 'static',
+    show: false
+  });
     
 });
 

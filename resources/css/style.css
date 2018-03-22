@@ -41,6 +41,7 @@ body {
     width: 43px;
     height: 37px;
     margin: 12px 0px;
+    cursor: pointer;
 }
 
 .navbar .cart-wrapper {
@@ -235,6 +236,7 @@ body {
 
 .moveForward {
     z-index: 1 !important;
+    cursor: pointer;
 }
 
 .small-spots {

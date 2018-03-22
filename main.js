@@ -54,12 +54,18 @@ app.post('/addToData', function(req, res) {
     });
     let jsonObj = JSON.parse(rawdata);
     
-    var number = jsonObj.length % 5;
     var id = jsonObj.length + 1; 
-    newItem = jsonObj[number];
-    newItem.id = id;
+    var newItem = {
+        "id": id,
+        "title": "Sample Game Title",
+        "image": "static/img/sample.png",
+        "priceBtn": 9.99,
+        "discount": false
+    };
+
     
     jsonObj.push(newItem);
+    var length = jsonObj.length;
     
     jsonObj = JSON.stringify(jsonObj, null, 2);
   
@@ -67,10 +73,8 @@ app.post('/addToData', function(req, res) {
         if (err) throw err;
         console.log('Saved!');
     });
-
-    
-    
-    
+  
+    res.send("Element added successfully. Number of elements: " + length);
 });
 
 app.post('/deleteFromData', function(req, res) {
@@ -79,20 +83,21 @@ app.post('/deleteFromData', function(req, res) {
         console.log('Read allData success');
     });
     let jsonObj = JSON.parse(rawdata);
-    console.log(jsonObj);
-    if(jsonObj.length > 5 ){
-        jsonObj.slice(-1,1);
-        console.log(jsonObj.slice(-1,1));
-        
+    
+  if(jsonObj.length > 5 ){
+       jsonObj.splice(-1,1);
+       var length = jsonObj.length;
+       jsonObj = JSON.stringify(jsonObj, null, 2);
+
+       fs.writeFile(urlData, jsonObj, function (err) {
+           if (err) throw err;
+           console.log('Saved!');
+       });
+    res.send("Element deleted successfully. Number of elements: " + length);
     }
-    console.log(jsonObj);
-    
-    jsonObj = JSON.stringify(jsonObj, null, 2);
-    
-//    fs.writeFile(urlData, jsonObj, function (err) {
-//        if (err) throw err;
-//        console.log('Saved!');
-//    });
+    else{
+         res.send("Can't be less then 5 elements"); 
+    }
 });
 
 
@@ -188,6 +193,11 @@ var server = app.listen(3000, '0.0.0.0', () => {
   
   console.log('Server is running on http://%s:%s', host, port);
 }).on('error', (err) => {
-  app.listen(3001);
+  app.listen(3001, '0.0.0.0', () => {
+    var host = server.address().address;
+    var port = server.address().port;
+  
+    console.log('Server is running on http://%s:%s', host, port);
+  });
 });
 
