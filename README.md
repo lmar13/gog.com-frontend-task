@@ -30,11 +30,11 @@ I decided that, the best approach to this task, is to create a web application t
 Languages  | Styles Framework  | JavaScript Framework | Database
 ---------  | ----------------  | -------------------- | --------
 HTML       | Bootstrap v4.0.0  | Node.js v8.10.0      | JSON
-CSS        | Popper.js v1.12.9 | Npm v???             |
-JavaScript |                   | jQuery v3.2.1        |
-           |                   | Express.js v4.8.0    | 
-           |                   | Body-parser v1.0.1   | 
-           |                   | Nodemon v1.17.2      |
+CSS        | Popper.js v1.12.9 | Npm v???             | .
+JavaScript | .                 | jQuery v3.2.1        | .
+.          | .                 | Express.js v4.8.0    | .
+.          | .                 | Body-parser v1.0.1   | .
+.          | .                 | Nodemon v1.17.2      | .
 
 
 ### Installation
