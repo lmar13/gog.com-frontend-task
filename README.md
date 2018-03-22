@@ -30,7 +30,7 @@ I decided that, the best approach to this task, is to create a web application t
 Languages  | Styles Framework  | JavaScript Framework | Database
 ---------  | ----------------  | -------------------- | --------
 HTML       | Bootstrap v4.0.0  | Node.js v8.10.0      | JSON
-CSS        | Popper.js v1.12.9 | Npm v???             | .
+CSS        | Popper.js v1.12.9 | Npm v5.7.1           | .
 JavaScript | .                 | jQuery v3.2.1        | .
 .          | .                 | Express.js v4.8.0    | .
 .          | .                 | Body-parser v1.0.1   | .
@@ -87,11 +87,11 @@ it means that server started correctly. Please go to address that is shown in co
     * Redraw selected item in main view
     * Parameters such price and how many elements are updated
 
-### Secret place
+### Secret pleace
 When I was extracting PSD image provided for this task, I noticed that there is **SECRET** button. So off course I implemented it, but I thought, it would be nice, if this button has some function. So I added ability to add and delete sample elements but leave default untouched. To see this modal please use instruction below:
 
 1. Click on logo of your company - **SECRET** button will show up
-2. Click on button to open modal window
+2. Click on **SECRET** button to open modal window
 3. To add sample element click **ADD**
 4. To remove sample element click **DELETE**
 5. To see changes close modal with **X** button located top right corner. Any outside click won't close modal

@@ -4,6 +4,7 @@ body {
     height: 740px;
 }
 
+/*gradient color for background*/
 .gradient {
     background: -webkit-linear-gradient(-90deg, rgba(108, 54, 173, 0.101961) 0%, rgba(194, 194, 194, 0) 100%);
     background: -moz-linear-gradient(-90deg, rgba(108, 54, 173, 0.101961) 0%, rgba(194, 194, 194, 0) 100%);
@@ -19,6 +20,8 @@ body {
     margin-top: 20px;
 }
 
+/*styles for navbar*/
+/*main container*/
 .navbar {
     background-color: #dedede;
     background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0) 9%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.495) 99%, rgba(255, 255, 255, 0.5) 100%);
@@ -37,6 +40,7 @@ body {
     height: 100%;
 }
 
+/*logo*/
 .navbar .logo-classic {
     width: 43px;
     height: 37px;
@@ -44,6 +48,7 @@ body {
     cursor: pointer;
 }
 
+/*cart container*/
 .navbar .cart-wrapper {
     height: 61px;
     width: 61px;
@@ -57,6 +62,7 @@ body {
     padding: 0px;
 }
 
+/*text for cart button*/
 .navbar .text-cart {
     margin-top: 20px;
     margin-left: 5px;
@@ -70,6 +76,7 @@ body {
     position: absolute;
 }
 
+/*cart logo*/
 .navbar .logo-cart {
     margin-left: 14px;
     margin-top: 23px;
@@ -78,6 +85,8 @@ body {
     height: 17px;
 }
 
+/*styles for cart dropdown*/
+/*main container*/
 .dropdown-menu {
     left: -137px;
     margin: 0 0 0;
@@ -93,11 +102,13 @@ body {
 /*    height: 202px;*/
 }
 
+/*first element with information*/
 .dropdown-menu .cart-summary {
     margin: 8px 9px;
     height: 45px;
 }
 
+/*clear button*/
 .dropdown-menu .btn {
     font-family: 'Source Sans Pro';
     color: #ffffff;
@@ -118,6 +129,7 @@ body {
     margin-left: 10px;
 }
 
+/*container for how many items text*/
 .dropdown-menu .cart-item-all {
     margin-right: 59px;
     font-family: 'Source Sans Pro';
@@ -128,6 +140,7 @@ body {
     display: inline-block;
 }
 
+/*container for price text*/
 .dropdown-menu .cart-price-all {
     font-family: 'Source Sans Pro';
     color:  #1a1a1a;
@@ -138,17 +151,20 @@ body {
     display: inline-block;
 }
 
+/*container for each item in cart*/
 .dropdown-menu .cart-item {
     margin: 5px 10px 5px 5px;
     height: 60px;
 }
 
+/*item image*/
 .dropdown-menu .cart-item img {
     width: 100px;
     height: 60px;
     display: inline-block;
 }
 
+/*item title*/
 .dropdown-menu .cart-item-title {
     font-family: 'Source Sans Pro';
     color:  #212121;
@@ -168,6 +184,7 @@ body {
     text-transform: uppercase;
 }
 
+/*item container for remove button*/
 .dropdown-menu .cart-item-remove {
     font-family: 'Source Sans Pro';
     color: #212121;
@@ -183,6 +200,7 @@ body {
     color: #212121;
 }
 
+/*item price*/
 .dropdown-menu .cart-item-price {
     display: inline-block;
     font-family: 'Source Sans Pro';
@@ -193,6 +211,8 @@ body {
     margin-left: 20px;
 }
 
+/*main container*/
+/*main container title*/
 .main-text {
     font-family: 'Source Sans Pro';
     color:  #262626;
@@ -202,6 +222,7 @@ body {
     margin-bottom: 0px;
 }
 
+/*container for image*/
 .big-spots {
     width: 100%;
     height: 370px;
@@ -212,6 +233,7 @@ body {
     height: 100%;
 }
 
+/*secret button*/
 .big-spots .secretButton {
     font-family: 'Source Sans Pro';
     color: #ffffff;
@@ -234,11 +256,14 @@ body {
     position: absolute;
 }
 
+/*move secret button forward*/
 .moveForward {
     z-index: 1 !important;
     cursor: pointer;
 }
 
+/*spots*/
+/*main container*/
 .small-spots {
     background-color: #e1e1e1;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
@@ -247,11 +272,13 @@ body {
     margin-bottom: 20px;
 }
 
+/*images*/
 .small-spots img {
     width: 100%;
     height: 110px;
 }
 
+/*text containers*/
 .small-spots .text-spots {
     font-family: 'Source Sans Pro';
     color: #212121;
@@ -267,10 +294,12 @@ body {
     min-height: 28px;
 }
 
+/*price and badge(discount) container*/
 .small-spots .price-tags {
     padding-bottom: 7px;
 }
 
+/*badge*/
 .small-spots .price-tags .badge {
     font-family: 'Source Sans Pro';
     color:  #f3f3f3;
@@ -283,6 +312,7 @@ body {
     margin-right: 4px;
 }
 
+/*button*/
 .small-spots .price-tags .btn {
     margin-right: 6px;
     height: 24px;
@@ -302,6 +332,7 @@ body {
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
+/*class for center elements*/
 .center {
     margin: 0;
     position: absolute;

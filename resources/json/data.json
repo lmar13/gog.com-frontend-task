@@ -1,37 +1,37 @@
 [
-    {
-        "id": 1,
-        "title": "Oddworld: stranger’s wrath",
-        "image": "static/img/img_small_1.png",
-        "priceBtn": 9.99,
-        "discount": "-50%"
-    },
-    {
-        "id": 2,
-        "title": "Chaos on deponia",
-        "image": "static/img/img_small_2.png",
-        "priceBtn": "OWNED",
-        "discount": false
-    },
-    {
-        "id": 3,
-        "title": "The settlers 2: gold edition",
-        "image": "static/img/img_small_3.png",
-        "priceBtn": 5.99,
-        "discount": false
-    },
-    {
-        "id": 4,
-        "title": "Neverwinter nights",
-        "image": "static/img/img_small_4.png",
-        "priceBtn": 4.99,
-        "discount": "-50%"
-    },
-    {
-        "id": 5,
-        "title": "Assassin’s creed: director’s cut",
-        "image": "static/img/img_small_5.png",
-        "priceBtn": 9.99,
-        "discount": false
-    }
+  {
+    "id": 1,
+    "title": "Oddworld: stranger’s wrath",
+    "image": "static/img/img_small_1.png",
+    "priceBtn": 9.99,
+    "discount": "-50%"
+  },
+  {
+    "id": 2,
+    "title": "Chaos on deponia",
+    "image": "static/img/img_small_2.png",
+    "priceBtn": "OWNED",
+    "discount": false
+  },
+  {
+    "id": 3,
+    "title": "The settlers 2: gold edition",
+    "image": "static/img/img_small_3.png",
+    "priceBtn": 5.99,
+    "discount": false
+  },
+  {
+    "id": 4,
+    "title": "Neverwinter nights",
+    "image": "static/img/img_small_4.png",
+    "priceBtn": 4.99,
+    "discount": "-50%"
+  },
+  {
+    "id": 5,
+    "title": "Assassin’s creed: director’s cut",
+    "image": "static/img/img_small_5.png",
+    "priceBtn": 9.99,
+    "discount": false
+  }
 ]
